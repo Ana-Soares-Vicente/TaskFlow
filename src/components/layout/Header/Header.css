@@ -1,0 +1,52 @@
+.container-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: inherit;
+}
+
+.container-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+}
+
+.container-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.btn-theme,
+.btn-logout {
+  border: 1px solid transparent;
+  background: transparent;
+  color: inherit;
+  padding: 0.55rem 0.9rem;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-theme:hover,
+.btn-logout:hover,
+.nav-link:hover {
+  opacity: 0.85;
+}
+
+.user-name {
+  font-weight: 500;
+}
