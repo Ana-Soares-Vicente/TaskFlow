@@ -1,3 +1,5 @@
+//tema claro/escuro
+
 import { createContext, useContext, useState, useEffect } from 'react';
 
 const ThemeContext = createContext(null);
