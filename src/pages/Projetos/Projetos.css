@@ -1,0 +1,24 @@
+.container-projetos {
+  padding: 2rem;
+}
+
+.container-projetos h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #1a1a2e;
+}
+
+.container-projetos p {
+  color: #555;
+  font-size: 1rem;
+}
+
+/* Dark mode */
+[data-theme="dark"] .container-projetos h1 {
+  color: #f0f0f0;
+}
+
+[data-theme="dark"] .container-projetos p {
+  color: #aaa;
+}
