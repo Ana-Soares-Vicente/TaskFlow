@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
-import "./Header.css";
-import { useAuth } from "../../../hooks/useAuth";
-import { useTheme } from "../../../hooks/useTheme";
+import { Link } from 'react-router-dom';
+import { useAuth } from '../../../contexts/AuthContext';
+import { useTheme } from '../../../contexts/ThemeContext';
+import './Header.css';
 
-const Header = () => {
+function Header() {
   const { theme, toggleTheme } = useTheme();
   const { user, logout } = useAuth();
 
@@ -21,24 +21,24 @@ const Header = () => {
 
       <div className="container-header-actions">
         <button className="btn-theme" onClick={toggleTheme}>
-          {theme === "light" ? "Dark" : "Light"}
+          {theme === 'light' ? 'Dark' : 'Light'}
         </button>
 
         {user ? (
           <>
-            <span className="user-name">Olá, {user.name}</span>
+            <span className="header-username">Olá, {user.nome}</span>
             <button className="btn-logout" onClick={logout}>
               Sair
             </button>
           </>
         ) : (
-          <Link to="/login" className="nav-link">
-            Login
+          <Link to="/login" className="btn-login">
+            Entrar
           </Link>
         )}
       </div>
     </header>
   );
-};
+}
 
 export default Header;

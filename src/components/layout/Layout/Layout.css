@@ -1,0 +1,11 @@
+.container-layout {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.container-main {
+  min-height: calc(100vh - 70px);
+  padding: 1rem 0;
+}

@@ -1,0 +1,177 @@
+.container-projetos {
+  padding: 2rem;
+}
+
+.projetos-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.projetos-header h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.btn-novo-projeto {
+  background-color: #646cff;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-novo-projeto:hover {
+  background-color: #535bf2;
+}
+
+/* Formulário */
+.form-novo-projeto {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.input-novo-projeto {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-novo-projeto:focus {
+  border-color: #646cff;
+}
+
+.btn-criar {
+  background-color: #22c55e;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-criar:hover {
+  background-color: #16a34a;
+}
+
+/* Lista de projetos */
+.projetos-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.projeto-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.projeto-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.projeto-card-link {
+  text-decoration: none;
+  color: inherit;
+  flex: 1;
+}
+
+.projeto-card-link h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 0.25rem 0;
+}
+
+.projeto-data {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.btn-remover-projeto {
+  background: none;
+  border: none;
+  color: #9ca3af;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.btn-remover-projeto:hover {
+  color: #ef4444;
+  background-color: #fef2f2;
+}
+
+/* Estado vazio */
+.projetos-vazio {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #9ca3af;
+}
+
+.projetos-vazio p {
+  margin: 0.25rem 0;
+}
+
+/* Dark mode */
+[data-theme="dark"] .projetos-header h1 {
+  color: #f0f0f0;
+}
+
+[data-theme="dark"] .projeto-card {
+  background-color: #1a1a2e;
+  border-color: #2a2a4a;
+}
+
+[data-theme="dark"] .projeto-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .projeto-card-link h3 {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .projeto-data {
+  color: #666;
+}
+
+[data-theme="dark"] .input-novo-projeto {
+  background-color: #1a1a2e;
+  border-color: #2a2a4a;
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .input-novo-projeto:focus {
+  border-color: #646cff;
+}
+
+[data-theme="dark"] .btn-remover-projeto:hover {
+  background-color: #2a1a1a;
+}
+
+[data-theme="dark"] .projetos-vazio {
+  color: #666;
+}
