@@ -6,24 +6,35 @@ import './ProjetoDetalhe.css';
 
 const estadoInicial = { BACKLOG: [], TODO: [], DOING: [], DONE: [] };
 
-function ProjetoDetalhe() {
-  const { id } = useParams();
+function Kanban({id, navigate, ProjetoAtual, setProjetoAtual}) {
+  const { novaTarefa, setNovaTarefa } = useState("");
   const [colunas, dispatch] = useReducer(kanbanReducer, estadoInicial);
 
   useEffect(() => {
-    api.get(`/projetos/${id}/tarefas`).then((tarefas) => {
-      const agrupado = { BACKLOG: [], TODO: [], DOING: [], DONE: [] };
-      tarefas.forEach((t) => agrupado[t.status]?.push(t));
-      dispatch({ type: 'SET_TAREFAS', payload: agrupado });
-    }).catch((error) => {
-      console.error('Erro ao carregar tarefas:', error);
-    });
-  }, [id]);
+    localStorage .setItem(`projeto-${id}`, JSON.stringify(colunas));
+  }, [colunas, id]);
 
-  const moverTarefa = (tarefaId, deColuna, paraColuna) => {
-    dispatch({ type: 'MOVER_TAREFA', payload: { tarefaId, deColuna, paraColuna } });
-    api.put(`/tarefas/${tarefaId}`, { status: paraColuna });
-  };
+  function encontrarTarefa(tarefaId) {
+    for (const coluna of Object.keys(colunas)) {
+      const tarefa = colunas[coluna].find((t) => t.id === tarefaId);
+      if (tarefa) return tarefa;
+    }
+
+function handleMoverTarefa(tarefaId, deColuna, paraColuna) {
+    moverTarefa(tarefaId, deColuna, paraColuna);
+  }
+
+  function adicionarTarefa(titulo) {
+    const novaTarefa = { id: Date.now(), titulo, status: 'BACKLOG' };
+    dispatch({ type: 'ADICIONAR_TAREFA', payload: novaTarefa });
+    api.post(`/projetos/${id}/tarefas`, novaTarefa);
+  }
+
+function removerTarefa(tarefaId, coluna) {
+    dispatch({ type: 'REMOVER_TAREFA', payload: { tarefaId, coluna } });
+    api.delete(`/tarefas/${tarefaId}`);
+  }
+
 
   return (
     <div className="container-projeto-detalhe">
