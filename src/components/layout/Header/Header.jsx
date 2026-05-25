@@ -26,14 +26,14 @@ function Header() {
 
         {user ? (
           <>
-            <span className="user-name">Olá, {user.name}</span>
+            <span className="header-username">Olá, {user.nome}</span>
             <button className="btn-logout" onClick={logout}>
               Sair
             </button>
           </>
         ) : (
-          <Link to="/login" className="nav-link">
-            Login
+          <Link to="/login" className="btn-login">
+            Entrar
           </Link>
         )}
       </div>
