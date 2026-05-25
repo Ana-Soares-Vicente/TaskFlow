@@ -74,6 +74,13 @@
   font-style: italic;
 }
 
+/* Card "fantasma" que segue o mouse durante o drag */
+.kanban-card-overlay {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transform: rotate(3deg);
+  cursor: grabbing;
+}
+
 /* Dark mode */
 [data-theme="dark"] .kanban-column {
   background-color: #16213e;
