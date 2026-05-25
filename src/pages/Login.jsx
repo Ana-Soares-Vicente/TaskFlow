@@ -1,27 +1,25 @@
-import { useContext } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { AuthContext } from '../contexts/AuthContext'
-import '.././index.css'
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
 
 function Login() {
-  const navigate = useNavigate()
-  const { setLogado } = useContext(AuthContext)
+  const navigate = useNavigate();
+  const { login } = useAuth();
 
   function entrar() {
-    setLogado(true)
-    navigate('/login')
+    login({ name: 'Usuário' });
+    navigate('/');
   }
 
   return (
-    <div className='container-login'>
+    <div className="container-login">
       <div className="container-login-content">
-        <h2 className='container-login-title'>Kanban - Login</h2>
-        <button onClick={entrar} className='container-login-button'>
+        <h2 className="container-login-title">TaskFlow - Login</h2>
+        <button onClick={entrar} className="container-login-button">
           Entrar no Sistema
         </button>
       </div>
     </div>
-  )
+  );
 }
 
-export default Login
+export default Login;
