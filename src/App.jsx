@@ -1,10 +1,9 @@
-import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Projetos from './pages/Projetos';
-import ProjetoDetalhe from './pages/ProjetoDetalhe';
 import Layout from './components/layout/Layout/Layout';
+import Home from './pages/Home/Home';
+import Login from './pages/Login/Login';
+import Projetos from './pages/Projetos/Projetos';
+import ProjetoDetalhe from './pages/ProjetoDetalhe/ProjetoDetalhe';
 
 function App() {
   return (
